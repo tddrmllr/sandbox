@@ -1,19 +1,20 @@
 <h1>Sandbox Home</h1>
-<h2><%= link_to 'Current Chapter', "http://www.w3schools.com/js/js_functions.asp", :target => '_blank' %></h2>
+<h2><%= link_to 'Current Chapter', "http://www.w3schools.com/js/js_if_else.asp", :target => '_blank' %></h2>
 <p></p>
 
 <%= text_field_tag 'x', nil %>
 x
 <%= text_field_tag 'y', nil %>
 
-<button onclick="multiply()">Execute</button>
+<button onclick="test()">Execute</button>
 
 <span id="answer">Product</span>
 
 <script>
-	function multiply(x,y)
+	function test()
 		{
-			return x*y
+			var x = document.getElementById("x")
+			
+			document.getElementById("answer").innerHTML=x
 		}
-	document.getElementById("ansser").innerHTML=multiply(5,2)
 </script>
