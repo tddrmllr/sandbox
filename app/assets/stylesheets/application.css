@@ -5,3 +5,70 @@
  *= require_self
  *= require_tree . 
 */
+
+/* HEADERS */
+
+.logo { 
+	font-family: 'Comfortaa', cursive;
+	font-size: 200%; 
+}
+
+.logo a {
+	color: #000000;
+}
+
+.logo a:hover {
+	color: #000000;
+}
+
+h1 {
+  font-family: 'Comfortaa', cursive;
+  font-weight: normal;
+  font-size: 150%;
+  margin: 20px 0px 0px 0px;
+  color: #CCCCCC
+}
+
+h2 {
+  font-family: 'Comfortaa', cursive;
+  font-weight: normal;
+  font-size: 125%;
+  margin: 20px 0px 0px 0px;
+  color: #CCCCCC
+}
+
+/* BODY */
+
+body {
+	font-family: 'Comfortaa', cursive;
+	margin-left: -30px;
+}
+
+div.holder {
+	position: relative;
+  	padding: 0px;
+  	width: 1000px;
+  	margin-left: auto;
+  	margin-right: auto;
+}
+  	
+a {
+  	text-decoration: none;
+  	color: #66CC66
+}
+
+a:hover {
+	color: #339933;
+  	text-decoration: none;
+}
+
+/* DASH */
+
+#dash_box {
+	width: 240px;
+	height: 220px;
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	padding-top: 20px;
+	margin: 0px;
+}

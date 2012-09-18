@@ -1,0 +1,20 @@
+<div class="holder">
+
+	<h1><%= @title %></h1>
+
+	<%= text_field_tag 'x', nil %>
+	x
+	<%= text_field_tag 'y', nil %>
+
+	<button onclick="multiply()">Execute</button>
+	=
+	<span id="answer">Product</span>
+</div>
+
+<script>
+	function multiply()	{
+		var x = document.getElementById("x").value
+		var y = document.getElementById("y").value
+		document.getElementById("answer").innerHTML=x*y
+	}
+</script>

@@ -1,20 +1,41 @@
-<h1>Sandbox Home</h1>
-<h2><%= link_to 'Current Chapter', "http://www.w3schools.com/js/js_if_else.asp", :target => '_blank' %></h2>
-<p></p>
+<div class="holder">
 
-<%= text_field_tag 'x', nil %>
-x
-<%= text_field_tag 'y', nil %>
+	<h1><%= link_to 'current chapter', "http://www.w3schools.com/js/js_if_else.asp", :target => '_blank' %></h1>
+	
+	<table>
+		<tr>
+			<td style="padding-right: 10px">
+				<div class="hover" id="dash_box" onmouseover="hoveron()" onmouseout="hoveroff()">
+					simple function
+				</div>
+			</td>
+			<td style="padding-right: 10px; padding-left: 10px">
+				<div class="hover" id="dash_box" onmouseover="hoveron()" onmouseout="hoveroff()">
+					dynamic search
+				</div>
+			</td>
+			<td style="padding-right: 10px; padding-left: 10px">
+				<div class="hover" id="dash_box" onmouseover="hoveron()" onmouseout="hoveroff()">
+					modal input
+				</div>
+			</td>
+			<td style="padding-left: 10px">
+				<div class="hover" id="dash_box" onmouseover="hoveron()" onmouseout="hoveroff()">
+					input validation
+				</div>
+			</td>
+		</tr>
+	</table>
+	<br>
+</div>
 
-<button onclick="test()">Execute</button>
 
-<span id="answer">Product</span>
-
-<script>
-	function test()
-		{
-			var x = document.getElementById("x")
-			
-			document.getElementById("answer").innerHTML=x
-		}
-</script>
+<script>			
+	function hoveron()	{
+		document.getElementById("dash_box").style.background="#F8F8F8"
+	}
+		
+	function hoveroff()	{
+		document.getElementById("dash_box").style.background="#FFFFFF"
+	}
+	</script>
