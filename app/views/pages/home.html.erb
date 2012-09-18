@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Sandbox Home</h1>
+<h2><%= link_to 'Current Chapter', "http://www.w3schools.com/js/js_functions.asp", :target => '_blank' %></h2>
+<p></p>
+
+<%= text_field_tag 'x', nil %>
+x
+<%= text_field_tag 'y', nil %>
+
+<button onclick="multiply()">Execute</button>
+
+<span id="answer">Product</span>
+
+<script>
+	function multiply(x,y)
+		{
+			return x*y
+		}
+	document.getElementById("ansser").innerHTML=multiply(5,2)
+</script>
