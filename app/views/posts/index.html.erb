@@ -2,12 +2,7 @@
 	
 	<h1><%= @header %></h1>
 
-	<div class="box">
-		<%= form_for(@post) do |f| %>
-			<%= f.text_area :body %>
-			<%= f.submit %>
-		<% end %>
-	</div>
+	<%= render '/posts/form'%>
 	
 	<form id="search_form">
   		<input id="search_input" name="q" type="text"/>

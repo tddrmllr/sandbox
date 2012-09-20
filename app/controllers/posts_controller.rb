@@ -13,11 +13,20 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
     respond_with(@post) do |format|
       if @post.save
-        format.html {redirect_to posts_path, :notice => 'post successfully created'}
+        format.html {redirect_to(posts_path)}
         format.js
        else
-         format.html {redirect_to posts_path}
+         format.html {render :action => 'new'}
       end
+    end
+  end
+  
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    respond_with(posts_path) do |format|
+      format.html
+      format.js
     end
   end
   
