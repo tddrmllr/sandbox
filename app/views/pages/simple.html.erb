@@ -1,20 +1,71 @@
 <div class="holder">
-
-	<h1><%= @title %></h1>
-
-	<%= text_field_tag 'x', nil %>
-	x
-	<%= text_field_tag 'y', nil %>
-
-	<button onclick="multiply()">Execute</button>
-	=
-	<span id="answer">Product</span>
+	<h1><%= @heading %></h1>
+	
+	<div class="cursorbox" id="jqslide" onmouseover="hoveron()" onmouseout="hoveroff()">
+		jquery slide
+		<div id="slider" style="display: none; font-size: 65%">
+			this element slides up and down using jquery. i used javascript to code the hover effect, which probably isn't the most effective way.
+		</div>
+	</div>
+	
+	<div class="box">
+		js multiply
+		<%= text_field_tag 'x', nil %>
+		x
+		<%= text_field_tag 'y', nil %>
+	
+		<button onclick="multiply()">Execute</button>
+		=
+		<span id="answer">product</span>
+	</div>
+	<div class="box">
+		jquery hide
+		<button id="toggle">hide/show</button>
+		<span id="jhide" style="font-size: 65%">this text can be hidden and unhidden using jquery</span>
+	</div>
+	<div class="box">
+		jquery animation
+		<button id="play">play</button>
+		<button id="reset">reset</button>
+		<span id="film" style="font-size: 65%">this is a simple animation using jquery</span>
+	</div>
 </div>
 
 <script>
+	$("#play").click(function(){
+		$("#film").animate({
+			fontSize:'50%',
+			opacity:'0.5'
+		});
+	});
+	
+	$("#reset").click(function(){
+		$("#film").css({
+			'font-size':'65%',
+			'opacity':'1.0'
+		});
+	});
+	
+	$("#jqslide").click(function(){
+		$("#slider").slideToggle();
+	});
+	
+	$("#toggle").click(function(){
+ 		$("#jhide").fadeToggle(500);
+	});
+	
 	function multiply()	{
 		var x = document.getElementById("x").value
 		var y = document.getElementById("y").value
 		document.getElementById("answer").innerHTML=x*y
 	}
+	
+		function hoveron()	{
+		document.getElementById("jqslide").style.background="#F8F8F8"
+	}
+		
+	function hoveroff()	{
+		document.getElementById("jqslide").style.background="#FFFFFF"
+	}
+	
 </script>

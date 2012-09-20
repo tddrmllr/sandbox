@@ -3,24 +3,16 @@
 	<table>
 		<tr>
 			<td style="padding-right: 10px">
-				<div class="hover" id="dash_box" onmouseover="hoveron()" onmouseout="hoveroff()">
-					simple function
-				</div>
+				<%= link_to 'simple js elements', simple_path, :class => 'dash_box' %>		
 			</td>
 			<td style="padding-right: 10px; padding-left: 10px">
-				<div class="hover" id="dash_box" onmouseover="hoveron()" onmouseout="hoveroff()">
-					dynamic search
-				</div>
+				<%= link_to 'dynamic search', posts_path, :class => 'dash_box' %>	
 			</td>
 			<td style="padding-right: 10px; padding-left: 10px">
-				<div class="hover" id="dash_box" onmouseover="hoveron()" onmouseout="hoveroff()">
-					modal input
-				</div>
+				<%= link_to 'modal input', '#', :class => 'dash_box' %>
 			</td>
 			<td style="padding-left: 10px">
-				<div class="hover" id="dash_box" onmouseover="hoveron()" onmouseout="hoveroff()">
-					input validation
-				</div>
+				<%= link_to 'input validation', '#', :class => 'dash_box' %>
 			</td>
 		</tr>
 	</table>
@@ -28,12 +20,19 @@
 </div>
 
 
-<script>			
-	function hoveron()	{
-		document.getElementById("dash_box").style.background="#F8F8F8"
-	}
-		
-	function hoveroff()	{
-		document.getElementById("dash_box").style.background="#FFFFFF"
-	}
+<script>
+
+	$(".dash_box").mouseover(function(){
+		$(this).css("background-color","#F8F8F8");
+	});
+	
+	$(".dash_box").mouseout(function(){
+		$(this).css("background-color","#FFFFFF");
+	});
+	
+	$("#test").click(function(){
+		$(this).window.location.href="http://www.google.com";
+	})
+			
+
 	</script>

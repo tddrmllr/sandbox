@@ -1,9 +1,32 @@
-<h1>Posts</h1>
+<div class="holder">
+	
+	<h1><%= @header %></h1>
 
-<div id="post_form">
-  <%= render 'form' %>
+	<div class="box">
+		<%= form_for(@post) do |f| %>
+			<%= f.text_area :body %>
+			<%= f.submit %>
+		<% end %>
+	</div>
+	
+	<form id="search_form">
+  		<input id="search_input" name="q" type="text"/>
+	</form>
+
+	<%= render @posts %>
+	
 </div>
 
-<ul id="posts">
-  <%= render :partial => @posts.reverse %>
-</ul>
+<script>
+	
+	$(".post").mouseover(function(){
+		$(this).css("background-color","#F8F8F8");
+		$(this).children("a").toggle();
+	});
+	
+	$(".post").mouseout(function(){
+		$(this).css("background-color","#FFFFFF");
+		$(this).children("a").toggle();
+	});
+	
+</script>

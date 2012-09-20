@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
+
+<%= yield :head%>
+
 <head>
-  <title>sandbox</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+  	<title><%= @title %></title>
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "application" %>
+  	<%= csrf_meta_tags %>
+  	<link href='http://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-<div class="holder">
-	<div class="logo"><%= link_to 'sandbox', root_path %></div>
-	test site for learning javascript, jquery, ajax, and other rich internet stuff
-</div>
+	
+<%= render 'layouts/header' %>
 
 <%= yield %>
 

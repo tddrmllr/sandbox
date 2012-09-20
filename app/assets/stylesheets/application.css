@@ -6,7 +6,23 @@
  *= require_tree . 
 */
 
-/* HEADERS */
+/* HEADER */
+
+nav {
+	white-space: nowrap;
+	float: right;
+}
+
+nav > ul > li {
+  	list-style-type: none;
+  	display: inline-block;
+}
+
+nav > ul > li > a {
+  	font-weight: normal;
+  	padding: 0px 5px 0px 5px;
+}
+
 
 .logo { 
 	font-family: 'Comfortaa', cursive;
@@ -22,25 +38,23 @@
 }
 
 h1 {
-  font-family: 'Comfortaa', cursive;
-  font-weight: normal;
-  font-size: 150%;
-  margin: 20px 0px 0px 0px;
-  color: #CCCCCC
+	font-family: 'Comfortaa', cursive;
+  	font-weight: normal;
+  	font-size: 150%;
+  	margin: 20px 0px 0px 0px;
+  	color: #999999;
 }
 
 h2 {
-  font-family: 'Comfortaa', cursive;
-  font-weight: normal;
-  font-size: 125%;
-  margin: 20px 0px 0px 0px;
-  color: #CCCCCC
+  	font-weight: normal;
+  	font-size: 125%;
+  	margin: 20px 0px 0px 0px;
+  	color: #CCCCCC
 }
 
 /* BODY */
 
 body {
-	font-family: 'Comfortaa', cursive;
 	margin-left: -30px;
 }
 
@@ -50,6 +64,29 @@ div.holder {
   	width: 1000px;
   	margin-left: auto;
   	margin-right: auto;
+}
+
+div.box {
+	position: relative;
+  	padding: 0px;
+  	width: 1000px;
+  	margin-left: auto;
+  	margin-right: auto;
+  	border: 1px solid #CCCCCC;
+  	margin-top: 10px;
+  	padding: 10px;
+}
+
+div.cursorbox {
+	cursor: pointer;
+	position: relative;
+  	padding: 0px;
+  	width: 1000px;
+  	margin-left: auto;
+  	margin-right: auto;
+  	border: 1px solid #CCCCCC;
+  	margin-top: 10px;
+  	padding: 10px;
 }
   	
 a {
@@ -62,13 +99,46 @@ a:hover {
   	text-decoration: none;
 }
 
+table th, td{
+	padding: 0px;
+}
+
 /* DASH */
 
-#dash_box {
+a.dash_box {
+	display: block;
+	color: #000000;
 	width: 240px;
 	height: 220px;
 	border: 1px solid #CCCCCC;
 	text-align: center;
 	padding-top: 20px;
 	margin: 0px;
+}
+
+/* POSTS */
+
+#search_input {
+	width: 1000px;
+	font-size: 100%;
+	border: 1px solid #CCCCCC;
+	padding: 9px 10px 9px 10px;
+	background: url("/assets/search_icon.png");
+	background-repeat: no-repeat;
+	background-position: right;	
+	margin-top: 10px;
+	margin-bottom: 5px;
+	color: #39A5FE;
+}
+
+div.post {
+	width: 1000px;
+	padding: 10px;
+	border: 1px dashed #CCCCCC;
+	margin-top: 5px;
+}
+
+a.post_delete {
+	display: none;
+	float: right;
 }
