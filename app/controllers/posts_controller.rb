@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   
-  respond_to :html, :js
+  respond_to :html, :js, :xml, :json
   
   def index
     @title = 'posts'
@@ -11,9 +11,9 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.new(params[:post])
-    respond_with(@post) do |format|
+    respond_with do |format|
       if @post.save
-        format.html {redirect_to(posts_path)}
+        format.html {redirect_to @post}
         format.js
        else
          format.html {render :action => 'new'}
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    respond_with(posts_path) do |format|
+    respond_with(posts_url) do |format|
       format.html
       format.js
     end

@@ -1,3 +1,10 @@
-$('.post:first').before('<%= escape_javascript(render(@post)) %>');
+$('#post_form')
+	.live('ajax:success', function(){
+			
+		$('#post_div').append(<%= escape_javascript(render(@post)) %>);
+	});
+});
+			
+
 $('.post:first').effect('highlight', {}, 3000);
 $('#post_form > form')[0].reset();
