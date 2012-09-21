@@ -1,10 +1,15 @@
-$('#post_form')
-	.live('ajax:success', function(){
-			
-		$('#post_div').append(<%= escape_javascript(render(@post)) %>);
-	});
-});
-			
+$('#post_div').html('<%= escape_javascript(render(@updated_posts)) %>');
+$('.post:first').hide();
+$('.post:first').slideDown('slow');
+$('#post_body').val('')
 
-$('.post:first').effect('highlight', {}, 3000);
-$('#post_form > form')[0].reset();
+
+$(".post").mouseover(function(){
+	$(this).css("background-color","#F8F8F8");
+	$(this).children("a").toggle();
+});
+	
+$(".post").mouseout(function(){
+	$(this).css("background-color","#FFFFFF");
+	$(this).children("a").toggle();
+});

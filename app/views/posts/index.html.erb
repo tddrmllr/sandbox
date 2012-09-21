@@ -10,21 +10,25 @@
 	
 	<div id="post_div">
 		<%= render @posts %>
-	</div>
 		
+		<script>
+			$(".post").mouseover(function(){
+				$(this).css("background-color","#F8F8F8");
+				$(this).children("a").toggle();
+			});
+			
+			$(".post").mouseout(function(){
+				$(this).css("background-color","#FFFFFF");
+				$(this).children("a").toggle();
+			});
+			
+			$('.post_delete').click(function(){
+				$(this).parent.hide();
+			})
+		</script>
+		
+	</div>
 	
 </div>
 
-<script>
-	
-	$(".post").mouseover(function(){
-		$(this).css("background-color","#F8F8F8");
-		$(this).children("a").toggle();
-	});
-	
-	$(".post").mouseout(function(){
-		$(this).css("background-color","#FFFFFF");
-		$(this).children("a").toggle();
-	});
-	
-</script>
+

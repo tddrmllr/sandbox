@@ -1,1 +1,5 @@
-$('a[data-method="delete"]').live('ajax:success', function(){});
+$('.post_delete').bind('ajax:success', function(){
+	$(this).closest('div').slideUp('slow');
+});
+
+
