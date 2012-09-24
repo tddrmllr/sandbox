@@ -5,7 +5,8 @@ class PostsController < ApplicationController
   def index
     @title = 'posts'
     @header = 'posts'
-    @posts = Post.all.sort_by{|t| - t.created_at.to_i}
+    @index = Post.all.sort_by{|t| - t.created_at.to_i}
+    @posts = @index.paginate(:per_page => 5, :page => params[:page])
     @post = Post.new
   end
   
