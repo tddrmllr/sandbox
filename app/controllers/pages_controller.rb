@@ -8,4 +8,9 @@ class PagesController < ApplicationController
     @heading = 'simple js features'
   end
   
+  def resources
+    @title = 'resources'
+    @heading = 'project resources'
+  end
+  
 end

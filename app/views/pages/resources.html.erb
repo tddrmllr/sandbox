@@ -1,0 +1,43 @@
+<div class="holder">
+	<h1><%= @heading %></h1>
+	
+	<div class="cursorbox" id="jqslide" onmouseover="hoveron()" onmouseout="hoveroff()">
+		search
+		<div class="slider" style="display: none">
+			<%= link_to 'metasearch', 'http://erniemiller.org/projects/metasearch/', :target => '_blank' %>
+			<p>metasearch is extensible searching for your form_for enjoyment. it “wraps” one of your activerecord models, providing methods that allow you to build up search conditions against that model, and has a few extra form helpers to simplify sorting and supplying multiple parameters to your condition methods as well.</p>
+			<%= link_to 'railscast #240: search, sort, paginate with ajax', 'http://railscasts.com/episodes/240-search-sort-paginate-with-ajax', :target => '_blank' %>
+			<p>many administration pages have search, sorting, and pagination on the index page. see how to add all of this including ajax.</p>
+			<%= link_to 'railscast #228: sortable table columns', 'http://railscasts.com/episodes/228-sortable-table-columns', :target => '_blank' %>
+			<p>here i walk you through adding the ability to sort table columns in ascending or descending order by clicking the header.</p>
+		</div>
+	</div>
+	<div class="cursorbox" id="jqslide" onmouseover="hoveron()" onmouseout="hoveroff()">
+		test box
+		<div class="slider" style="display: none; font-size: 65%">
+			random text that slides down when the box is clicked.
+		</div>
+	</div>
+</div>
+
+<script>
+
+	
+	$(".cursorbox").click(function(){
+		$(this).children("div").slideToggle();
+	});
+
+	$(".cursorbox").mouseover(function(){
+		$(this).css("background-color","#F8F8F8");
+	});
+	
+	$(".cursorbox").mouseout(function(){
+		$(this).css("background-color","#FFFFFF");
+	});
+	
+	$('.slider').css('padding-top', '5px')
+	
+	$('p').css('margin-top', '0px');
+	$('p').css('font-size', '75%');
+	
+</script>

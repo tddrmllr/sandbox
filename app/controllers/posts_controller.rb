@@ -5,9 +5,10 @@ class PostsController < ApplicationController
   def index
     @title = 'posts'
     @header = 'posts'
-    @index = Post.all.sort_by{|t| - t.created_at.to_i}
-    @posts = @index.paginate(:per_page => 5, :page => params[:page])
     @post = Post.new
+    @search = Post.search(params[:search])
+    @posts = @search.all.sort_by{|t| - t.created_at.to_i}
+    respond_with(@posts)
   end
   
   def create

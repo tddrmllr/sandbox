@@ -118,7 +118,7 @@ a.dash_box {
 
 /* POSTS */
 
-#search_input {
+#search_body_contains {
 	width: 1000px;
 	font-size: 100%;
 	border: 1px solid #CCCCCC;

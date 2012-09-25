@@ -4,6 +4,7 @@ Sandbox::Application.routes.draw do
   resources :posts
   
   match '/simple', :to => "pages#simple"
+  match '/resources', :to => "pages#resources"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

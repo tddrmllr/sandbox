@@ -4,10 +4,10 @@
 
 	<%= render '/posts/form'%>
 	
-	<form id="search_form">
-  		<input id="search_input" name="q" type="text"/>
-	</form>
-	
+	<%= form_for @search do |f| %>
+		<%= f.text_field :body_contains %>
+	<% end %>
+		
 	<div id="post_div">
 		<%= render @posts %>
 		
@@ -24,6 +24,10 @@
 			
 			$('.post_delete').click(function(){
 				$(this).parent.hide();
+			})
+			
+			$("#post_search input").keyup(function(){
+				$.get(this.action, "script");
 			})
 		</script>
 		
