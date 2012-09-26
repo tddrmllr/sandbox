@@ -4,35 +4,27 @@
 
 	<%= render '/posts/form'%>
 	
-	<%= form_for @search do |f| %>
+	<%= form_for @search, :remote => true do |f| %>
 		<%= f.text_field :body_contains %>
 	<% end %>
 		
 	<div id="post_div">
-		<%= render @posts %>
-		
-		<script>
-			$(".post").mouseover(function(){
-				$(this).css("background-color","#F8F8F8");
-				$(this).children("a").toggle();
-			});
-			
-			$(".post").mouseout(function(){
-				$(this).css("background-color","#FFFFFF");
-				$(this).children("a").toggle();
-			});
-			
-			$('.post_delete').click(function(){
-				$(this).parent.hide();
-			})
-			
-			$("#post_search input").keyup(function(){
-				$.get(this.action, "script");
-			})
-		</script>
-		
+		<%= render @posts %>		
 	</div>
-	
+		
 </div>
 
 
+<script>
+	
+$("#post_search input").keyup(function(){
+	var form = $("#post_search");
+	var url = 'posts';
+	var formData = form.serialize();				
+	$.get(url, formData, function(html){
+		$("#post_div").html(html);
+	});
+});
+
+	
+</script>

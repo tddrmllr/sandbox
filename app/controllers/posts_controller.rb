@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     @posts = @search.all.sort_by{|t| - t.created_at.to_i}
     respond_with(@posts)
   end
-  
+
   def create
     @new_post = Post.new(params[:post])
     @new_post.save
