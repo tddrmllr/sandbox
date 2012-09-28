@@ -30,3 +30,13 @@ $(function(){
 	});
 });
 
+$(function(){
+	$("#post_button").mouseover(function(){
+		$(this).css("background-color","rgb(235,235,235)");
+	});
+	
+	$("#post_button").mouseout(function(){
+		$(this).css("background-color","#F8F8F8");
+	});
+	
+});

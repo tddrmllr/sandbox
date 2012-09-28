@@ -1,6 +1,6 @@
 <div class="box">
 	<%= form_for @post, :remote => true do |f| %>
-		<%= f.text_area :body %>
-		<%= f.submit 'create post' %>
+		<%= f.text_field :body %>
+		<%= f.submit 'create post', :id => 'post_button' %>
 	<% end %>
 </div>

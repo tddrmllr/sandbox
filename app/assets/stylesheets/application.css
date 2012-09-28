@@ -131,6 +131,22 @@ a.dash_box {
 	color: #39A5FE;
 }
 
+#post_body {
+	border: none;
+	padding: 10px;
+	font-size: 100%;
+	color: #39A5FE;
+	width: 840px;
+}
+
+#post_button {
+	padding: 10px;
+	font-size: 100%;
+	background: #F8F8F8;
+	border: 1px solid #CCCCCC;
+	width: 130px;
+}
+
 div.post {
 	width: 1000px;
 	padding: 10px;

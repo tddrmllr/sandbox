@@ -18,12 +18,7 @@
 <script>
 	
 $("#post_search input").keyup(function(){
-	var form = $("#post_search");
-	var url = 'posts/search';
-	var formData = form.serialize();				
-	$.get(url, formData, function(html){
-		$("#post_div").html(html);
-	});
+	$(this).submit();
 });
 
 	
